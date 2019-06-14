@@ -18,13 +18,17 @@ CircuitPython library for Sparkfun Qwiic Joystick
 .. image:: https://cdn.sparkfun.com/assets/parts/1/3/5/5/8/15168-SparkFun_Qwiic_Joystick-01.jpg
     :target: https://www.sparkfun.com/products/15168
     :alt: SparkFun Qwiic Joystick (DEV-15168)
-SparkFun Qwiic Joystick (DEV-15168)
+
+`SparkFun Qwiic Joystick (DEV-15168) <https://www.sparkfun.com/products/15168>`_
+  
+
 
 Dependencies
 =============
 This driver depends on:
 
 * `Adafruit CircuitPython <https://github.com/adafruit/circuitpython>`_
+* `Qwiic Joystick Product Repository <https://github.com/sparkfun/Qwiic_Joystick>`_
 
 Please ensure all dependencies are available on the CircuitPython filesystem.
 This is easily achieved by downloading
@@ -60,9 +64,8 @@ To install in a virtual environment in your current project:
 
 Usage Example
 =============
-
-* `Qwiic Joystick Hookup Guide <https://learn.sparkfun.com/tutorials/qwiic-joystick-hoookup-guide>' - Hookup guide for the Qwiic Joystick
-* `CircuitPython on a Raspberry Pi <https://learn.adafruit.com/circuitpython-on-raspberrypi-linux> - Basic information on how to install CircuitPython on a Raspberry Pi.
+* `Qwiic Joystick Hookup Guide <https://learn.sparkfun.com/tutorials/qwiic-joystick-hoookup-guide>`_ - The Arduino examples in the Hookup Guide are available for Python with this library
+* `CircuitPython on a Raspberry Pi <https://learn.adafruit.com/circuitpython-on-raspberrypi-linux>`_ - Basic information on how to install CircuitPython on a Raspberry Pi.
 
 Contributing
 ============

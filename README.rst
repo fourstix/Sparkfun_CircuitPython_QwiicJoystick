@@ -15,6 +15,10 @@ Introduction
 
 CircuitPython library for Sparkfun Qwiic Joystick
 
+.. image:: https://cdn.sparkfun.com/assets/parts/1/3/5/5/8/15168-SparkFun_Qwiic_Joystick-01.jpg
+    :target: https://www.sparkfun.com/products/15168
+    :alt: SparkFun Qwiic Joystick (DEV-15168)
+SparkFun Qwiic Joystick (DEV-15168)
 
 Dependencies
 =============
@@ -33,17 +37,17 @@ Installing from PyPI
 .. todo:: Remove the above note if PyPI version is/will be available at time of release.
    If the library is not planned for PyPI, remove the entire 'Installing from PyPI' section.
 On supported GNU/Linux systems like the Raspberry Pi, you can install the driver locally `from
-PyPI <https://pypi.org/project/adafruit-circuitpython-qwiicjoystick/>`_. To install for current user:
+PyPI <https://pypi.org/project/sparkfun-circuitpython-qwiicjoystick/>`_. To install for current user:
 
 .. code-block:: shell
 
-    pip3 install adafruit-circuitpython-qwiicjoystick
+    pip3 install sparkfun-circuitpython-qwiicjoystick
 
 To install system-wide (this may be required in some cases):
 
 .. code-block:: shell
 
-    sudo pip3 install adafruit-circuitpython-qwiicjoystick
+    sudo pip3 install sparkfun-circuitpython-qwiicjoystick
 
 To install in a virtual environment in your current project:
 
@@ -52,12 +56,13 @@ To install in a virtual environment in your current project:
     mkdir project-name && cd project-name
     python3 -m venv .env
     source .env/bin/activate
-    pip3 install adafruit-circuitpython-qwiicjoystick
+    pip3 install sparkfun-circuitpython-qwiicjoystick
 
 Usage Example
 =============
 
-.. todo:: Add a quick, simple example. It and other examples should live in the examples folder and be included in docs/examples.rst.
+* `Qwiic Joystick Hookup Guide <https://learn.sparkfun.com/tutorials/qwiic-joystick-hoookup-guide>' - Hookup guide for the Qwiic Joystick
+* `CircuitPython on a Raspberry Pi <https://learn.adafruit.com/circuitpython-on-raspberrypi-linux> - Basic information on how to install CircuitPython on a Raspberry Pi.
 
 Contributing
 ============

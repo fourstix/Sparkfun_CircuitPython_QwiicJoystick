@@ -24,8 +24,8 @@ deploy:
     file: "$TRAVIS_BUILD_DIR/bundles/*"
     skip_cleanup: true
     overwrite: true
-  #  on:
-  #    tags: true
+    on:
+      tags: true
   # Use 'travis encrypt --com -r adafruit/<repo slug>' to generate
   #       the encrypted password for adafruit-travis. Paste result below.
   - provider: pypi
@@ -33,8 +33,8 @@ deploy:
     password:
       secure: XQJmXcYbSfFg3g7fLflvbavEUfnO+x6hX2drXdGjlHqUJpiD70Q/EK4PCyNLr9oPuzODr/hTGTdzC1B5mSicd4Jdgoa2mLqnFKsIchjh5H+QAQi9XiNSAZ8B8T74iIchiwsJYliu9LC3+gHge/VjPrHAQ2Zqv71HXB1ogA3WSl1DIanCF5z3d/sFQbFOcOwVtrwxhIfxcQKbheVMhyoOjJnyz/m8ACMgtscfWmQmxKXLJ+iS9mZARKNaTRvAKZgsl+Rz8lgsAE4/GtsFNsWh2GmakGZRwbmepCrJ/w7hfYxkly6LrsjZub7S+eyZItxYf6nlRtftCtXwPHQtStdMRihH19IjnkbS775L+vWZDCuFV0kw9kq2guiRkO57MquPWqx1rAghj7I8aC2IcDols2A/DMsDLIkoWLmAKBXe9V1z5DL2JfSxx1o1xuJtsQRKTgsaXCNakbKGWMmldkh8A+fyF8QsI4aUJk7e2ImhDJQSTlL0GUbt+Jxkozd+qWap2AZOku2UEV4KRYFxPS2cSzOZpuss8tK/2QHuBuXRLFhDiXy1BGh/NvSnq2W+8FzipatU2jnI21aadREQAaQ7XUoln3Is2lIZn+KQE7HfUna8+ZPcUau5pPvMCTykHrfDINLa9yAXhNL84S2WtR1+ygcOl+5fPFp41ppz3RQJp28=
       #secure: "bocArgPi5b6mIJ1nZFS1srxVkJzHl8xZ+p7EkXTc7wWWh/l3qE3A7FR31sCDHGAEr9EouqmbzMLMj4HHlPseO/3XQa4TlhZDz1A+eo/zqBjIr18kxEEVv0dcWIOKvZFCdkui3md/X/j/zNcCwJ313SgbbW4hN8fvnb9FSYSRb/n2I4O8o1GUuFZXU8ntqNmHr0kVkDryqMUk2rYktRaWH174TD/g8RDXzpp84tpePsFxcYdVxmZ5IwzUEqM2HTU65R6pHpIbR2mywJ3i9Atvq+Y0ulk7hMeA1OvPKinpRaL/yyKFjTMcW0gLscaR+LqVPGZmvf+DEhmt9MolARrGRfEzJhHKggjOT3LOigV/0P5OeUI3go9sneMv/Em7VD/za+hZLK198gGwAepJBltqk4PnQTPkPwVy8DhXV5cALyLvQHz6XTqGgeB9g66JOLYhuuUSTFQqZtwg+8PhwJ8W5LQxmKeE2ohulfrq7jSPt+FVsvCZc87Z463iqAFZ4RqZLnn8td1Ye582FES0by1GO0TCKouWGj9U4SRUcfhmnd7/mZQZzBN+cyPyBN0Hb4xqSGfOGpHw7M+A6+QKiyMV6EkvB/Nu2g7Q4ZLKiNoBy3uf5X1fFY+WBUeal9l0NQtgJtB5/5mPscoH8fLoIfFHqj5IBbjV54SG/OIjzcpYsUc="
-  #  on:
-  #    tags: true
+    on:
+      tags: true
       condition: $DEPLOY_PYPI = "true"
 
 install:

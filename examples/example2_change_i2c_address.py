@@ -23,10 +23,10 @@
     The default value for the address is 32 [0x20]
 """
 
+import sys
 import board
 import busio
 import sparkfun_qwiicjoystick
-import sys
 
 # The default QwiicJoystick i2c address is 0x20 (32)
 i2c_address = 0x20

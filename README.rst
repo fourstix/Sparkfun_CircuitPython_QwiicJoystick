@@ -41,8 +41,8 @@ Installing from PyPI
    as a standard element. Stay tuned for PyPI availability!
 .. todo:: Remove the above note if PyPI version is/will be available at time of release.
    If the library is not planned for PyPI, remove the entire 'Installing from PyPI' section.
-On supported GNU/Linux systems like the Raspberry Pi, you can install the driver locally `from
-PyPI <https://pypi.org/project/sparkfun-circuitpython-qwiicjoystick/>`_. To install for current user:
+   On supported GNU/Linux systems like the Raspberry Pi, you can install the driver locally `from
+   PyPI <https://pypi.org/project/sparkfun-circuitpython-qwiicjoystick/>`_. To install for current user:
 
 .. code-block:: shell
 

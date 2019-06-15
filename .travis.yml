@@ -15,7 +15,7 @@ cache:
 #       or remove the env block entirely and remove the condition in the
 #       deploy block.
 env:
-  - DEPLOY_PYPI="false"
+  - DEPLOY_PYPI="true"
 
 deploy:
   - provider: releases

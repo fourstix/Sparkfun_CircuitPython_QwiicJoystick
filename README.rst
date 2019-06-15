@@ -17,9 +17,9 @@ CircuitPython library for Sparkfun Qwiic Joystick
 
 .. image:: https://cdn.sparkfun.com/assets/parts/1/3/5/5/8/15168-SparkFun_Qwiic_Joystick-01.jpg
     :target: https://www.sparkfun.com/products/15168
-    :alt: SparkFun Qwiic Joystick (DEV-15168)
+    :alt: SparkFun Qwiic Joystick (COM-15168)
 
-`SparkFun Qwiic Joystick (DEV-15168) <https://www.sparkfun.com/products/15168>`_
+`SparkFun Qwiic Joystick (COM-15168) <https://www.sparkfun.com/products/15168>`_
   
 
 
@@ -28,7 +28,7 @@ Dependencies
 This driver depends on:
 
 * `Adafruit CircuitPython <https://github.com/adafruit/circuitpython>`_
-* `Qwiic Joystick Product Repository <https://github.com/sparkfun/Qwiic_Joystick>`_
+* `Qwiic Joystick Hardware <https://github.com/sparkfun/Qwiic_Joystick>`_
 
 Please ensure all dependencies are available on the CircuitPython filesystem.
 This is easily achieved by downloading

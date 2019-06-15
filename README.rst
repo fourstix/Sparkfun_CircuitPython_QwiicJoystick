@@ -28,6 +28,7 @@ Dependencies
 This driver depends on:
 
 * `Adafruit CircuitPython <https://github.com/adafruit/circuitpython>`_
+* `Adafruit Bus Device <https://github.com/adafruit/Adafruit_CircuitPython_BusDevice>`_
 * `Qwiic Joystick Hardware <https://github.com/sparkfun/Qwiic_Joystick>`_
 
 Please ensure all dependencies are available on the CircuitPython filesystem.

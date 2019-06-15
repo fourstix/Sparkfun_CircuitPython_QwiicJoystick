@@ -13,10 +13,10 @@
  and print out the joystick position.
 """
 
+from time import sleep
 import board
 import busio
 import sparkfun_qwiicjoystick
-from time import sleep
 
 # Create bus object using our board's I2C port
 i2c = busio.I2C(board.SCL, board.SDA)
@@ -25,7 +25,7 @@ i2c = busio.I2C(board.SCL, board.SDA)
 joystick = sparkfun_qwiicjoystick.Sparkfun_QwiicJoystick(i2c)
 
 # Check if connected
-if (joystick.connected):
+if joystick.connected:
     print('Joystick connected.')
 else:
     print('Joystick does not appear to be connected. Please check wiring.')
@@ -33,7 +33,7 @@ else:
 
 print('Press Joystick button to exit program.')
 
-while (joystick.button == 1):
+while joystick.button == 1:
     print('X = ' + str(joystick.horizontal) + ' Y = ' + str(joystick.vertical))
     sleep(0.200)  # sleep a bit to slow down messages
 

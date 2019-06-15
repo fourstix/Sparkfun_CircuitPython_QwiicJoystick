@@ -53,29 +53,30 @@ Implementation Notes
 __version__ = "0.0.0-auto.0"
 __repo__ = "https://github.com/fourstix/Sparkfun_CircuitPython_QwiicJoystick.git"
 
+from time import sleep
 from micropython import const
 from adafruit_bus_device.i2c_device import I2CDevice
-from time import sleep
 
 # public constants
 QWIIC_JOYSTICK_ADDR = const(0x20) #default I2C Address
 
 # private constants
-_JOYSTICK_ID             = const(0x00)
-_JOYSTICK_VERSION1       = const(0x01)
-_JOYSTICK_VERSION2       = const(0x02)
-_JOYSTICK_X_MSB          = const(0x03)
-_JOYSTICK_X_LSB          = const(0x04)
-_JOYSTICK_Y_MSB          = const(0x05)
-_JOYSTICK_Y_LSB          = const(0x06)
-_JOYSTICK_BUTTON         = const(0x07)
-_JOYSTICK_STATUS         = const(0x08) #1 - button clicked
-_JOYSTICK_I2C_LOCK       = const(0x09)
+_JOYSTICK_ID = const(0x00)
+_JOYSTICK_VERSION1 = const(0x01)
+_JOYSTICK_VERSION2 = const(0x02)
+_JOYSTICK_X_MSB = const(0x03)
+_JOYSTICK_X_LSB = const(0x04)
+_JOYSTICK_Y_MSB = const(0x05)
+_JOYSTICK_Y_LSB = const(0x06)
+_JOYSTICK_BUTTON = const(0x07)
+_JOYSTICK_STATUS = const(0x08) #1 - button clicked
+_JOYSTICK_I2C_LOCK = const(0x09)
 _JOYSTICK_CHANGE_ADDRESS = const(0x0A)
 
 
 # class
 class Sparkfun_QwiicJoystick:
+    """CircuitPython class for the Sparkfun QwiicJoystick"""
 
     def __init__(self, i2c, address=QWIIC_JOYSTICK_ADDR, debug=False):
         """Initialize Qwiic Joystick for i2c communication."""
@@ -98,7 +99,7 @@ class Sparkfun_QwiicJoystick:
         """Return the version string for the Joystick firmware."""
         major = self._read_register(_JOYSTICK_VERSION1)
         minor = self._read_register(_JOYSTICK_VERSION2)
-        return ('v' + str(major) + '.' + str(minor))
+        return 'v' + str(major) + '.' + str(minor)
 
     @property
     def horizontal(self):
@@ -138,28 +139,28 @@ class Sparkfun_QwiicJoystick:
         status = self._read_register(_JOYSTICK_STATUS)
         #clear button status
         self._write_register(_JOYSTICK_STATUS, 0x00)
-        return (status & 0xFF)
+        return status & 0xFF
 
 
 # public functions
 
-    def set_i2c_address(self, newAddress):
+    def set_i2c_address(self, new_address):
         """Change the i2c address of Joystick snd return True if successful."""
         # check range of new address
-        if (newAddress < 8 or newAddress > 119):
+        if (new_address < 8 or new_address > 119):
             print('ERROR: Address outside 8-119 range')
             return False
         # write magic number 0x13 to lock register, to unlock address for update
         self._write_register(_JOYSTICK_I2C_LOCK, 0x13)
         # write new address
-        self._write_register(_JOYSTICK_CHANGE_ADDRESS, newAddress)
+        self._write_register(_JOYSTICK_CHANGE_ADDRESS, new_address)
 
 	# wait a second for joystick to settle after change
         sleep(1)
 
         # try to re-create new i2c device at new address
         try:
-            self._device = I2CDevice(self._i2c, newAddress)
+            self._device = I2CDevice(self._i2c, new_address)
         except ValueError as err:
             print('Address Change Failure')
             print(err)
@@ -178,7 +179,7 @@ class Sparkfun_QwiicJoystick:
             device.write(bytes([addr & 0xFF]), stop=False)
             result = bytearray(1)
             device.readinto(result)
-            if (self._debug):
+            if self._debug:
                 print("$%02X => %s" % (addr, [hex(i) for i in result]))
             return result[0]
 
@@ -186,5 +187,5 @@ class Sparkfun_QwiicJoystick:
         # Write a byte to the specified 8-bit register address
         with self._device as device:
             device.write(bytes([addr & 0xFF, value & 0xFF]))
-            if (self._debug):
+            if self._debug:
                 print("$%02X <= 0x%02X" % (addr, value))

@@ -15,10 +15,10 @@
  joystick position and button state, and print them out as directions.
 """
 
+from time import sleep
 import board
 import busio
 import sparkfun_qwiicjoystick
-from time import sleep
 
 # Create bus object using our board's I2C port
 i2c = busio.I2C(board.SCL, board.SDA)
@@ -28,7 +28,7 @@ joystick = sparkfun_qwiicjoystick.Sparkfun_QwiicJoystick(i2c)
 # joystick = sparkfun_qwiicjoystick.Sparkfun_QwiicJoystick(i2c, other_addr)
 
 # Check if connected
-if (joystick.connected):
+if joystick.connected:
     print('Joystick connected.')
 else:
     print('Joystick does not appear to be connected. Please check wiring.')
@@ -37,26 +37,26 @@ else:
 print('Joystick Version: ' + joystick.version)
 print('Type Ctrl-C to exit program.')
 
-try: 
+try:
     while True:
         x = joystick.horizontal
         y = joystick.vertical
         b = joystick.button
 
         # print horizontal direction
-        if (x > 575):
+        if x > 575:
             print('L')
-        if (x < 450):
+        if x < 450:
             print('R')
 
         # print vertical direction
-        if (y > 575):
+        if y > 575:
             print('U')
-        if (y < 450):
+        if y < 450:
             print('D')
 
         # print button state
-        if (b == 0):
+        if b == 0:
             print('Button')
 
         # sleep a bit to slow down messages

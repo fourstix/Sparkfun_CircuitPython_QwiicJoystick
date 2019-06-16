@@ -38,13 +38,15 @@ This is easily achieved by downloading
 
 Raspberry Pi Setup
 ------------------
-   Adafruit has an excellent tutorial on this: 
-   `Installing CircuitPython Libraries on Raspberry Pi
+   Adafruit has an excellent tutorial on `Installing CircuitPython Libraries on Raspberry Pi
    <https://learn.adafruit.com/circuitpython-on-raspberrypi-linux/installing-circuitpython-on-raspberry-pi/>`_.
  
 Quick Start Summary:
+
 * Start with the latest version of Raspbian with Wifi configured.
+
 * Enable SSH, I2C and SPI.
+
 .. code-block:: shell
 
     sudo raspi-config
@@ -60,22 +62,23 @@ Quick Start Summary:
 
     sudo pip3 install --upgrade setuptools
 (If pip3 is not installed, install it and rerun the command)
+
 .. code-block:: shell
     sudo apt-get install python3-pip
+
 * Install the CircuitPython libraries
 .. code-block:: shell
 
     pip3 install RPI.GPIO
     pip3 install adafruit-blinka
-    pip3 install 
-
 
 Installing from PyPI
 --------------------
    On supported GNU/Linux systems like the Raspberry Pi, you can install the driver locally `from
-   PyPI <https://pypi.org/project/sparkfun-circuitpython-qwiicjoystick/>`_. To install for current user:
-   Installing this library will also install the dependency adafruit-circuitpython-busdevice.
+   PyPI <https://pypi.org/project/sparkfun-circuitpython-qwiicjoystick/>`_.  Installing this
+   library will also install the dependency adafruit-circuitpython-busdevice.
 
+To install for current user:
 
 .. code-block:: shell
 

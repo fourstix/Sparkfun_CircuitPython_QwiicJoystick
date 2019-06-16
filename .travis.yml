@@ -1,3 +1,7 @@
+# This is a common .travis.yml for generating library release zip files for
+# CircuitPython library releases using circuitpython-build-tools.
+# See https://github.com/adafruit/circuitpython-build-tools for detailed setup
+# instructions.
 dist: xenial
 language: python
 python:
@@ -5,10 +9,7 @@ python:
 cache:
   pip: true
 env:
-  matrix:
   - DEPLOY_PYPI="true"
-  global:
-    secure: QVOfzSlwdYNi6QFJj2UoTo9MsiitYjxjjWxDK4pms0HW3lYPsLCTFnYpPd/iNau4JxqQFzA451xdTbzzk/wflxYsB4ruyXPvN/fi5oTHA/vlUo8Mm7Xui9udMtbi8ZCIyeEHFgEdaeeK/HydgIPFyQ8HJFphOMO6YdYWkcJYbJDxnNv76+lsrymdG9377dTDqzSXF05z4NbeaWjpyAC/h8uquMq/1H6xoddj9R/O7mJwuRIlxIVljkC4+i7WqW9mF2G9c1MeqTW3oAcKcIi7qe5JQrUoqVJCyG37maV31cTeWmLAEQ7YtdKXJzXC3/HX5ttoKPhvbqf5jNDPGRk1NLssWPqJzGIKViKfIXWTEQ6GqmoR77gn/fv1/lFt7t5+by4GML/l+sbDI4IaMZaXW9ZlZSdCpG1oPY4hjj1g+A98X10MFpcacFWTnqDb55xSe9LdKmRCwspQTPqq9a83TrosvoT74RxNsGy1d0L0bHlo3St1855aT+TQHG76KRC0pjYSv9TdWPqyNJ1mDBxXDGcLEE+W/Ph9GvNO1eCFxYVXq9Gm6Tu37Tyaf2TK5uzM8zWBWJ8ssDaWoK8tJJpHf7BwTUt/ALnSmMzLLKVJV8gigJJyYcctGY4Ipnn8pA3Bmp73mI24VMvkLXdO4RDJ3EcAcPHK6pxyUzFqNB6HmV4=
 deploy:
 - provider: releases
   api_key: "$GITHUB_TOKEN"
@@ -21,7 +22,7 @@ deploy:
 - provider: pypi
   user: fourstix
   password:
-    secure: 
+    secure: UK3CbjkS03U64C2c1J4nuJGJJKneRXTYAdn6rZ0sS0hkyDE0BhFIi0JZ4EYsM/HFP0VV09RMRHf1FsFRdYMlsBzM7gDdOEUmtPxHUknljPlUfE1KMx+LLfMh2K9tOvVQpEh5ZnvgmLbaLe+bNB+QAxBR4VOe72Sk4Dsaq+3vkkWpTxfMUc5CjLEgH3Gc2QOSr++TdFnPzhlRvMSls2RXfYklcBOYfof36dvPXvkaK602vopYJsNPJk/vznONq9myre8Rwnnj3CYejUPoYC7DPZMoWQDkCvj+E6OE440UhRdcrd4vZC0v8TVHD5ZxQKBJRO+w+4BntNL89/qmQAAu9HxrT/1y9KF/43awbJMeANDR7O4Po3/GMC3gpbXzv+Nw67umPkhY7bCV9CYwrbB4NfFeqlIVVCXF01aickp/qIlEEsFUA4toEaE7P98GVLZ+/4Uo1XYw6W0+eBzZUkZRpLXT3AG4DCxB0WkjCSmS/4CG3m2IPJ7L8e5P7q40TN1N7Y4QXAP4m2xSFlCWlsQLhPgnxBEsno6n+JwsP3YngFg1sGDrtulsU4joofQ3sEw9WdtlSaCSkR2Wbimxcwo53CC4jXPZLMgwZUSDLZareXuTi4ZGgJdGC3C17YKcmgSOVWVwFQnDPtfY0Rtu12xv9QnDs/p6O6WGUdnZSAn19PY=
   on:
     tags: true
     condition: $DEPLOY_PYPI = "true"

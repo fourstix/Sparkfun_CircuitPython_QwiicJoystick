@@ -77,17 +77,20 @@ _JOYSTICK_CHANGE_ADDRESS = const(0x0A)
 # class
 class Sparkfun_QwiicJoystick:
     """CircuitPython class for the Sparkfun QwiicJoystick
-       Usage:
-         # import the CircuitPython board and busio libraries
-         import board
-         import busio
+    Usage:
 
-         # Create bus object using the board's I2C port
-         i2c = busio.I2C(board.SCL, board.SDA)
+    # import the CircuitPython board and busio libraries
 
-         joystick = QwiicJoystick(i2c)  # default address is 0x20
-         # use QwiicJoystick(i2c, address) for a different address
-         # joystick = QwiicJoystick(i2c, 0x21)"""
+    import board
+    import busio
+
+    # Create bus object using the board's I2C port
+    i2c = busio.I2C(board.SCL, board.SDA)
+
+    joystick = QwiicJoystick(i2c)  # default address is 0x20
+
+    # use QwiicJoystick(i2c, address) for a different address
+    # joystick = QwiicJoystick(i2c, 0x21)"""
 
 
     def __init__(self, i2c, address=QWIIC_JOYSTICK_ADDR, debug=False):

@@ -61,12 +61,15 @@ Quick Start Summary:
 .. code-block:: shell
 
     sudo pip3 install --upgrade setuptools
+
 (If pip3 is not installed, install it and rerun the command)
 
 .. code-block:: shell
+
     sudo apt-get install python3-pip
 
 * Install the CircuitPython libraries
+
 .. code-block:: shell
 
     pip3 install RPI.GPIO
@@ -75,8 +78,8 @@ Quick Start Summary:
 Installing from PyPI
 --------------------
    On supported GNU/Linux systems like the Raspberry Pi, you can install the driver locally `from
-   PyPI <https://pypi.org/project/sparkfun-circuitpython-qwiicjoystick/>`_.  Installing this
-   library will also install the dependency adafruit-circuitpython-busdevice.
+   PyPI <https://pypi.org/project/sparkfun-circuitpython-qwiicjoystick/>`_.
+   Installing this library will also install the dependency adafruit-circuitpython-busdevice.
 
 To install for current user:
 
@@ -103,7 +106,7 @@ Usage Example
 =============
 * `Qwiic Joystick Hookup Guide <https://learn.sparkfun.com/tutorials/qwiic-joystick-hoookup-guide>`_ - The Arduino examples in the Hookup Guide are available for Python with this library
 * `CircuitPython on a Raspberry Pi <https://learn.adafruit.com/circuitpython-on-raspberrypi-linux>`_ - Basic information on how to install CircuitPython on a Raspberry Pi.
-* Example:
+* Code Example:
  .. code-block:: shell
 
      # import the CircuitPython board and busio libraries
@@ -115,7 +118,7 @@ Usage Example
 
      joystick = QwiicJoystick(i2c)  # default address is 0x20
      # use QwiicJoystick(i2c, address) for a different address
-         # joystick = QwiicJoystick(i2c, 0x21)"""
+     # joystick = QwiicJoystick(i2c, 0x21)"""
 
 Contributing
 ============

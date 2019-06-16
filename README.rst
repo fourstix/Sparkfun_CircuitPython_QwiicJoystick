@@ -13,7 +13,8 @@ Introduction
     :target: https://travis-ci.org/fourstix/Sparkfun_CircuitPython_QwiicJoystick
     :alt: Build Status
 
-CircuitPython library for Sparkfun Qwiic Joystick
+CircuitPython library for Sparkfun Qwiic Joystick.  This library is ported from the 
+`SparkFun Qwiic Joystick Arduino Library <https://github.com/sparkfun/SparkFun_Qwiic_Joystick_Arduino_Library>`_
 
 .. image:: https://cdn.sparkfun.com/assets/parts/1/3/5/5/8/15168-SparkFun_Qwiic_Joystick-01.jpg
     :target: https://www.sparkfun.com/products/15168
@@ -35,10 +36,46 @@ Please ensure all dependencies are available on the CircuitPython filesystem.
 This is easily achieved by downloading
 `the Adafruit library and driver bundle <https://github.com/adafruit/Adafruit_CircuitPython_Bundle>`_.
 
+Raspberry Pi Setup
+------------------
+   Adafruit has an excellent tutorial on this: 
+   `Installing CircuitPython Libraries on Raspberry Pi
+   <https://learn.adafruit.com/circuitpython-on-raspberrypi-linux/installing-circuitpython-on-raspberry-pi/>`_.
+ 
+Quick Start Summary:
+* Start with the latest version of Raspbian with Wifi configured.
+* Enable SSH, I2C and SPI.
+.. code-block:: shell
+
+    sudo raspi-config
+
+* Update your system to the latest version.
+.. code-block:: shell
+
+    sudo apt-get update
+    sudo apt-get upgrade
+
+* Update the python tools
+.. code-block:: shell
+
+    sudo pip3 install --upgrade setuptools
+(If pip3 is not installed, install it and rerun the command)
+.. code-block:: shell
+    sudo apt-get install python3-pip
+* Install the CircuitPython libraries
+.. code-block:: shell
+
+    pip3 install RPI.GPIO
+    pip3 install adafruit-blinka
+    pip3 install 
+
+
 Installing from PyPI
 --------------------
    On supported GNU/Linux systems like the Raspberry Pi, you can install the driver locally `from
    PyPI <https://pypi.org/project/sparkfun-circuitpython-qwiicjoystick/>`_. To install for current user:
+   Installing this library will also install the dependency adafruit-circuitpython-busdevice.
+
 
 .. code-block:: shell
 
@@ -63,6 +100,19 @@ Usage Example
 =============
 * `Qwiic Joystick Hookup Guide <https://learn.sparkfun.com/tutorials/qwiic-joystick-hoookup-guide>`_ - The Arduino examples in the Hookup Guide are available for Python with this library
 * `CircuitPython on a Raspberry Pi <https://learn.adafruit.com/circuitpython-on-raspberrypi-linux>`_ - Basic information on how to install CircuitPython on a Raspberry Pi.
+* Example:
+ .. code-block:: shell
+
+     # import the CircuitPython board and busio libraries
+     import board
+     import busio
+
+     # Create bus object using the board's I2C port
+     i2c = busio.I2C(board.SCL, board.SDA)
+
+     joystick = QwiicJoystick(i2c)  # default address is 0x20
+     # use QwiicJoystick(i2c, address) for a different address
+         # joystick = QwiicJoystick(i2c, 0x21)"""
 
 Contributing
 ============

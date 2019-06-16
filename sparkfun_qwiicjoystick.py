@@ -76,7 +76,19 @@ _JOYSTICK_CHANGE_ADDRESS = const(0x0A)
 
 # class
 class Sparkfun_QwiicJoystick:
-    """CircuitPython class for the Sparkfun QwiicJoystick"""
+    """CircuitPython class for the Sparkfun QwiicJoystick
+       Usage:
+         # import the CircuitPython board and busio libraries
+         import board
+         import busio
+
+         # Create bus object using the board's I2C port
+         i2c = busio.I2C(board.SCL, board.SDA)
+
+         joystick = QwiicJoystick(i2c)  # default address is 0x20
+         # use QwiicJoystick(i2c, address) for a different address
+         # joystick = QwiicJoystick(i2c, 0x21)"""
+
 
     def __init__(self, i2c, address=QWIIC_JOYSTICK_ADDR, debug=False):
         """Initialize Qwiic Joystick for i2c communication."""
@@ -89,21 +101,21 @@ class Sparkfun_QwiicJoystick:
 
     @property
     def connected(self):
-        """Check the id of Joystick.  Returns True if successful."""
+        """True if the Joystick is connected and a valid id is successful read."""
         if self._read_register(_JOYSTICK_ID) != QWIIC_JOYSTICK_ADDR:
             return False
         return True
 
     @property
     def version(self):
-        """Return the version string for the Joystick firmware."""
+        """Firmware version string for joystick."""
         major = self._read_register(_JOYSTICK_VERSION1)
         minor = self._read_register(_JOYSTICK_VERSION2)
         return 'v' + str(major) + '.' + str(minor)
 
     @property
     def horizontal(self):
-        """Return the X value 0 - 1023 of the joystick postion."""
+        """X value from 0 - 1023 of the joystick postion."""
         # Read MSB for horizontal joystick position
         x_msb = self._read_register(_JOYSTICK_X_MSB)
         # Read LSB for horizontal joystick position
@@ -115,7 +127,7 @@ class Sparkfun_QwiicJoystick:
 
     @property
     def vertical(self):
-        """Return the Y value 0 to 1023 of the joystick postion."""
+        """Y value from 0 to 1023 of the joystick postion."""
         # Read MSB for veritical joystick position
         y_msb = self._read_register(_JOYSTICK_Y_MSB)
         # Read LSB for vertical joystick position
@@ -127,14 +139,14 @@ class Sparkfun_QwiicJoystick:
 
     @property
     def button(self):
-        """Return 0 if button is down, 1 if up."""
+        """0 if button is down, 1 if button is up."""
         button = self._read_register(_JOYSTICK_BUTTON)
         return button
 
     # Issue: register 0x08 always contains 1 for some reason, even when cleared
     @property
     def button_status(self):
-        """Return 1 if button pressed between reads. Button status is cleared."""
+        """1 if button pressed between reads, cleared after read."""
         #read button status (since last check)
         status = self._read_register(_JOYSTICK_STATUS)
         #clear button status

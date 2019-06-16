@@ -79,6 +79,7 @@ Installing from PyPI
 --------------------
    On supported GNU/Linux systems like the Raspberry Pi, you can install the driver locally `from
    PyPI <https://pypi.org/project/sparkfun-circuitpython-qwiicjoystick/>`_.
+
    Installing this library will also install the dependency adafruit-circuitpython-busdevice.
 
 To install for current user:
@@ -117,6 +118,7 @@ Usage Example
      i2c = busio.I2C(board.SCL, board.SDA)
 
      joystick = QwiicJoystick(i2c)  # default address is 0x20
+
      # use QwiicJoystick(i2c, address) for a different address
      # joystick = QwiicJoystick(i2c, 0x21)"""
 

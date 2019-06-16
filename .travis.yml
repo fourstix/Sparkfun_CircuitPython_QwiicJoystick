@@ -1,49 +1,38 @@
-# This is a common .travis.yml for generating library release zip files for
-# CircuitPython library releases using circuitpython-build-tools.
-# See https://github.com/adafruit/circuitpython-build-tools for detailed setup
-# instructions.
-
 dist: xenial
 language: python
 python:
-  - "3.6"
-
+- '3.6'
 cache:
   pip: true
-
-# TODO: if deployment to PyPi is desired, change 'DEPLOY_PYPI' to "true",
-#       or remove the env block entirely and remove the condition in the
-#       deploy block.
 env:
+  matrix:
   - DEPLOY_PYPI="true"
-
+  global:
+    secure: QVOfzSlwdYNi6QFJj2UoTo9MsiitYjxjjWxDK4pms0HW3lYPsLCTFnYpPd/iNau4JxqQFzA451xdTbzzk/wflxYsB4ruyXPvN/fi5oTHA/vlUo8Mm7Xui9udMtbi8ZCIyeEHFgEdaeeK/HydgIPFyQ8HJFphOMO6YdYWkcJYbJDxnNv76+lsrymdG9377dTDqzSXF05z4NbeaWjpyAC/h8uquMq/1H6xoddj9R/O7mJwuRIlxIVljkC4+i7WqW9mF2G9c1MeqTW3oAcKcIi7qe5JQrUoqVJCyG37maV31cTeWmLAEQ7YtdKXJzXC3/HX5ttoKPhvbqf5jNDPGRk1NLssWPqJzGIKViKfIXWTEQ6GqmoR77gn/fv1/lFt7t5+by4GML/l+sbDI4IaMZaXW9ZlZSdCpG1oPY4hjj1g+A98X10MFpcacFWTnqDb55xSe9LdKmRCwspQTPqq9a83TrosvoT74RxNsGy1d0L0bHlo3St1855aT+TQHG76KRC0pjYSv9TdWPqyNJ1mDBxXDGcLEE+W/Ph9GvNO1eCFxYVXq9Gm6Tu37Tyaf2TK5uzM8zWBWJ8ssDaWoK8tJJpHf7BwTUt/ALnSmMzLLKVJV8gigJJyYcctGY4Ipnn8pA3Bmp73mI24VMvkLXdO4RDJ3EcAcPHK6pxyUzFqNB6HmV4=
 deploy:
-  - provider: releases
-    api_key: "$GITHUB_TOKEN"
-    file_glob: true
-    file: "$TRAVIS_BUILD_DIR/bundles/*"
-    skip_cleanup: true
-    overwrite: true
-    on:
-      tags: true
-  # Use 'travis encrypt --com -r adafruit/<repo slug>' to generate
-  #       the encrypted password for adafruit-travis. Paste result below.
-  - provider: pypi
-    user: fourstix
-    password:
-      secure: XQJmXcYbSfFg3g7fLflvbavEUfnO+x6hX2drXdGjlHqUJpiD70Q/EK4PCyNLr9oPuzODr/hTGTdzC1B5mSicd4Jdgoa2mLqnFKsIchjh5H+QAQi9XiNSAZ8B8T74iIchiwsJYliu9LC3+gHge/VjPrHAQ2Zqv71HXB1ogA3WSl1DIanCF5z3d/sFQbFOcOwVtrwxhIfxcQKbheVMhyoOjJnyz/m8ACMgtscfWmQmxKXLJ+iS9mZARKNaTRvAKZgsl+Rz8lgsAE4/GtsFNsWh2GmakGZRwbmepCrJ/w7hfYxkly6LrsjZub7S+eyZItxYf6nlRtftCtXwPHQtStdMRihH19IjnkbS775L+vWZDCuFV0kw9kq2guiRkO57MquPWqx1rAghj7I8aC2IcDols2A/DMsDLIkoWLmAKBXe9V1z5DL2JfSxx1o1xuJtsQRKTgsaXCNakbKGWMmldkh8A+fyF8QsI4aUJk7e2ImhDJQSTlL0GUbt+Jxkozd+qWap2AZOku2UEV4KRYFxPS2cSzOZpuss8tK/2QHuBuXRLFhDiXy1BGh/NvSnq2W+8FzipatU2jnI21aadREQAaQ7XUoln3Is2lIZn+KQE7HfUna8+ZPcUau5pPvMCTykHrfDINLa9yAXhNL84S2WtR1+ygcOl+5fPFp41ppz3RQJp28=
-      #secure: "bocArgPi5b6mIJ1nZFS1srxVkJzHl8xZ+p7EkXTc7wWWh/l3qE3A7FR31sCDHGAEr9EouqmbzMLMj4HHlPseO/3XQa4TlhZDz1A+eo/zqBjIr18kxEEVv0dcWIOKvZFCdkui3md/X/j/zNcCwJ313SgbbW4hN8fvnb9FSYSRb/n2I4O8o1GUuFZXU8ntqNmHr0kVkDryqMUk2rYktRaWH174TD/g8RDXzpp84tpePsFxcYdVxmZ5IwzUEqM2HTU65R6pHpIbR2mywJ3i9Atvq+Y0ulk7hMeA1OvPKinpRaL/yyKFjTMcW0gLscaR+LqVPGZmvf+DEhmt9MolARrGRfEzJhHKggjOT3LOigV/0P5OeUI3go9sneMv/Em7VD/za+hZLK198gGwAepJBltqk4PnQTPkPwVy8DhXV5cALyLvQHz6XTqGgeB9g66JOLYhuuUSTFQqZtwg+8PhwJ8W5LQxmKeE2ohulfrq7jSPt+FVsvCZc87Z463iqAFZ4RqZLnn8td1Ye582FES0by1GO0TCKouWGj9U4SRUcfhmnd7/mZQZzBN+cyPyBN0Hb4xqSGfOGpHw7M+A6+QKiyMV6EkvB/Nu2g7Q4ZLKiNoBy3uf5X1fFY+WBUeal9l0NQtgJtB5/5mPscoH8fLoIfFHqj5IBbjV54SG/OIjzcpYsUc="
-    on:
-      tags: true
-      condition: $DEPLOY_PYPI = "true"
-
+- provider: releases
+  api_key: "$GITHUB_TOKEN"
+  file_glob: true
+  file: "$TRAVIS_BUILD_DIR/bundles/*"
+  skip_cleanup: true
+  overwrite: true
+  on:
+    tags: true
+- provider: pypi
+  user: fourstix
+  password:
+    secure: 
+  on:
+    tags: true
+    condition: $DEPLOY_PYPI = "true"
 install:
-  - pip install -r requirements.txt
-  - pip install circuitpython-build-tools Sphinx sphinx-rtd-theme
-  - pip install --force-reinstall pylint==1.9.2
-
+- pip install -r requirements.txt
+- pip install circuitpython-build-tools Sphinx sphinx-rtd-theme
+- pip install --force-reinstall pylint==1.9.2
 script:
-  - pylint sparkfun_qwiicjoystick.py
-  - ([[ ! -d "examples" ]] || pylint --disable=missing-docstring,invalid-name,bad-whitespace examples/*.py)
-  - circuitpython-build-bundles --filename_prefix sparkfun-circuitpython-qwiicjoystick --library_location .
-  - cd docs && sphinx-build -E -W -b html . _build/html && cd ..
+- pylint sparkfun_qwiicjoystick.py
+- ([[ ! -d "examples" ]] || pylint --disable=missing-docstring,invalid-name,bad-whitespace
+  examples/*.py)
+- circuitpython-build-bundles --filename_prefix sparkfun-circuitpython-qwiicjoystick
+  --library_location .
+- cd docs && sphinx-build -E -W -b html . _build/html && cd ..

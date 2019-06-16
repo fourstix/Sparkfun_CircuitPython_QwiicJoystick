@@ -9,8 +9,8 @@ Introduction
     :target: https://discord.gg/nBQh6qu
     :alt: Discord
 
-.. image:: https://travis-ci.com/fourstix/Sparkfun_CircuitPython_QwiicJoystick.svg?branch=master
-    :target: https://travis-ci.com/fourstix/Sparkfun_CircuitPython_QwiicJoystick
+.. image:: https://travis-ci.org/fourstix/Sparkfun_CircuitPython_QwiicJoystick.svg?branch=master
+    :target: https://travis-ci.org/fourstix/Sparkfun_CircuitPython_QwiicJoystick
     :alt: Build Status
 
 CircuitPython library for Sparkfun Qwiic Joystick

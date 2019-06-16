@@ -108,6 +108,7 @@ Usage Example
 * `Qwiic Joystick Hookup Guide <https://learn.sparkfun.com/tutorials/qwiic-joystick-hoookup-guide>`_ - The Arduino examples in the Hookup Guide are available for Python with this library
 * `CircuitPython on a Raspberry Pi <https://learn.adafruit.com/circuitpython-on-raspberrypi-linux>`_ - Basic information on how to install CircuitPython on a Raspberry Pi.
 * Code Example:
+
  .. code-block:: shell
 
      # import the CircuitPython board and busio libraries

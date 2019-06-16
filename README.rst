@@ -29,7 +29,9 @@ Dependencies
 This driver depends on:
 
 * `Adafruit CircuitPython <https://github.com/adafruit/circuitpython>`_
+
 * `Adafruit Bus Device <https://github.com/adafruit/Adafruit_CircuitPython_BusDevice>`_
+
 * `Qwiic Joystick Hardware <https://github.com/sparkfun/Qwiic_Joystick>`_
 
 Please ensure all dependencies are available on the CircuitPython filesystem.
@@ -52,12 +54,14 @@ Quick Start Summary:
     sudo raspi-config
 
 * Update your system to the latest version.
+
 .. code-block:: shell
 
     sudo apt-get update
     sudo apt-get upgrade
 
 * Update the python tools
+
 .. code-block:: shell
 
     sudo pip3 install --upgrade setuptools
@@ -106,7 +110,9 @@ To install in a virtual environment in your current project:
 Usage Example
 =============
 * `Qwiic Joystick Hookup Guide <https://learn.sparkfun.com/tutorials/qwiic-joystick-hoookup-guide>`_ - The Arduino examples in the Hookup Guide are available for Python with this library
+
 * `CircuitPython on a Raspberry Pi <https://learn.adafruit.com/circuitpython-on-raspberrypi-linux>`_ - Basic information on how to install CircuitPython on a Raspberry Pi.
+
 * Code Example:
 
  .. code-block:: shell

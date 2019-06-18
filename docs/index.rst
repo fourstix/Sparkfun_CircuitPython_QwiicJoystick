@@ -23,8 +23,12 @@ Table of Contents
 .. toctree::
     :caption: Tutorials
 
+    Sparkfun Qwiic Joystick Hookup Guide <https://learn.sparkfun.com/tutorials/qwiic-joystick-hookup-guide>
+
 .. toctree::
     :caption: Related Products
+
+    Sparkfun Qwiic Joystick <https://www.sparkfun.com/products/15168>
 
 .. toctree::
     :caption: Other Links

@@ -30,6 +30,6 @@ Examples
 
 4. Joystick Output - Print joystick position and button status as directions.
 
-.. literalinclude:: ../examples/example4_joytstick_output.py
+.. literalinclude:: ../examples/example4_joystick_output.py
     :caption: examples/example4_joystick_output.py
     :linenos:

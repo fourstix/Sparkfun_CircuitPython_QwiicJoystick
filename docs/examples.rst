@@ -16,7 +16,7 @@ Examples
     :caption: examples/example1_basic_readings.py
     :linenos:
 
-2. Change I2C Addres - Change the device I2C address.
+2. Change I2C Address - Change the device I2C address.
 
 .. literalinclude:: ../examples/example2_change_i2c_address.py
     :caption: examples/example2_change_i2c_address.py

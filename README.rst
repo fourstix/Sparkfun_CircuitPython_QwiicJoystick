@@ -20,7 +20,7 @@ Introduction
     :target: https://github.com/psf/black
     :alt: Code Style: Black
 
-CircuitPython library for Sparkfun Qwiic Joystick.  This library is ported from the 
+CircuitPython library for Sparkfun Qwiic Joystick.  This library is ported from the
 `SparkFun Qwiic Joystick Arduino Library <https://github.com/sparkfun/SparkFun_Qwiic_Joystick_Arduino_Library>`_
 
 .. image:: https://cdn.sparkfun.com/assets/parts/1/3/5/5/8/15168-SparkFun_Qwiic_Joystick-01.jpg
@@ -28,7 +28,7 @@ CircuitPython library for Sparkfun Qwiic Joystick.  This library is ported from 
     :alt: SparkFun Qwiic Joystick (COM-15168)
 
 `SparkFun Qwiic Joystick (COM-15168) <https://www.sparkfun.com/products/15168>`_
-  
+
 
 
 Dependencies
@@ -49,7 +49,7 @@ Raspberry Pi Setup
 ------------------
 Adafruit has an excellent tutorial on `Installing CircuitPython Libraries on Raspberry Pi
 <https://learn.adafruit.com/circuitpython-on-raspberrypi-linux/installing-circuitpython-on-raspberry-pi/>`_.
- 
+
 Quick Start Summary:
 --------------------
 * Start with the latest version of Raspbian with Wifi configured.
@@ -200,15 +200,12 @@ Then run the build:
 
 License Information
 -----------------------
-This product is **open source**! 
+This product is **open source**!
 
-Please review the LICENSE.md file for license information. 
+Please review the LICENSE.md file for license information.
 
-Please use, reuse, and modify these files as you see fit. 
+Please use, reuse, and modify these files as you see fit.
 
 Please maintain the attributions to SparkFun Electronics and Adafruit and release any derivative under the same license.
 
 Distributed as-is; no warranty is given.
-
-
-

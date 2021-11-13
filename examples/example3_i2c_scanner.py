@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: Copyright (c) 2019-2021 Gaston Williams
+#
+# SPDX-License-Identifier: MIT
+
 #  This is example is for the SparkFun Qwiic Joystick.
 #  SparkFun sells these at its website: www.sparkfun.com
 #  Do you like this library? Help support SparkFun. Buy a board!
@@ -17,21 +21,21 @@
 """
 
 import time
-
 import board
-import busio
 
-i2c = busio.I2C(board.SCL, board.SDA)
+i2c = board.I2C()
 
 while not i2c.try_lock():
     pass
 
-print('Press Ctrl-C to exit program')
+print("Press Ctrl-C to exit program")
 
 try:
     while True:
-        print('I2C addresses found:',
-              [hex(device_address) for device_address in i2c.scan()])
+        print(
+            "I2C addresses found:",
+            [hex(device_address) for device_address in i2c.scan()],
+        )
         time.sleep(5)
 except KeyboardInterrupt:
     pass

@@ -1,6 +1,6 @@
 # SPDX-FileCopyrightText: Copyright (c) 2019-2021 Gaston Williams
 #
-# SPDX-License-Identifier: Unlicense
+# SPDX-License-Identifier: MIT
 
 #  This is example is for the SparkFun Qwiic Joystick.
 #  SparkFun sells these at its website: www.sparkfun.com
@@ -29,15 +29,15 @@ joystick = sparkfun_qwiicjoystick.Sparkfun_QwiicJoystick(i2c)
 
 # Check if connected
 if joystick.connected:
-    print('Joystick connected.')
+    print("Joystick connected.")
 else:
-    print('Joystick does not appear to be connected. Please check wiring.')
+    print("Joystick does not appear to be connected. Please check wiring.")
     sys.exit()
 
-print('Press Joystick button to exit program.')
+print("Press Joystick button to exit program.")
 
 while joystick.button == 1:
-    print('X = ' + str(joystick.horizontal) + ' Y = ' + str(joystick.vertical))
+    print("X = " + str(joystick.horizontal) + " Y = " + str(joystick.vertical))
     sleep(0.200)  # sleep a bit to slow down messages
 
-print('Button pressed.')
+print("Button pressed.")

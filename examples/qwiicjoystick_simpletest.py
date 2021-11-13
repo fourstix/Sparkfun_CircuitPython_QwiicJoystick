@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: Copyright (c) 2019-2021 Gaston Williams
+#
+# SPDX-License-Identifier: Unlicense
+
 #  This is example is for the SparkFun Qwiic Joystick.
 #  SparkFun sells these at its website: www.sparkfun.com
 #  Do you like this library? Help support SparkFun. Buy a board!
@@ -12,14 +16,13 @@
  This program uses the Qwiic Joystick CircuitPython Library to read
  and print out the joystick position.
 """
-
+import sys
 from time import sleep
 import board
-import busio
 import sparkfun_qwiicjoystick
 
 # Create bus object using our board's I2C port
-i2c = busio.I2C(board.SCL, board.SDA)
+i2c = board.I2C()
 
 # Create joystick object
 joystick = sparkfun_qwiicjoystick.Sparkfun_QwiicJoystick(i2c)
@@ -29,7 +32,7 @@ if joystick.connected:
     print('Joystick connected.')
 else:
     print('Joystick does not appear to be connected. Please check wiring.')
-    exit()
+    sys.exit()
 
 print('Press Joystick button to exit program.')
 

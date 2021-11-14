@@ -157,6 +157,24 @@ Usage Example
     # use QwiicJoystick(i2c, address) for a different address
     # joystick = QwiicJoystick(i2c, 0x21)"""
 
+Upgrading
+=========
+On supported GNU/Linux systems like the Raspberry Pi, you can upgrade the driver locally `from
+PyPI <https://pypi.org/project/Sparkfun-circuitpython-qwiicjoystick/>`_.
+
+To upgrade for current user:
+
+.. code-block:: shell
+
+    pip3 install --upgrade sparkfun-circuitpython-qwiicjoystick
+
+To upgrade system-wide (this may be required in some cases):
+
+.. code-block:: shell
+
+    sudo pip3 install --upgrade sparkfun-circuitpython-qwiicjoystick
+
+
 Contributing
 ============
 

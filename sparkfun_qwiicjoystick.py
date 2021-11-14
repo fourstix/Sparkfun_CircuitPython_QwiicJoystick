@@ -110,8 +110,12 @@ class Sparkfun_QwiicJoystick:
     @property
     def connected(self):
         """True if the Joystick is connected and a valid id is successful read."""
-        if self._read_register(_JOYSTICK_ID) != QWIIC_JOYSTICK_ADDR:
+        try:
+            # Attempt to read the id and see if we get an error
+            self._read_register(_JOYSTICK_ID)
+        except ValueError:
             return False
+
         return True
 
     @property
@@ -195,8 +199,11 @@ class Sparkfun_QwiicJoystick:
     def _read_register(self, addr):
         # Read and return a byte from the specified 8-bit register address.
         with self._device as device:
+            device.write(bytes([addr & 0xFF]))
             result = bytearray(1)
-            device.write_then_readinto(bytes([addr & 0xFF]), result)
+            device.readinto(result)
+            # For some reason, write_then_readinto returns invalid data
+            # device.write_then_readinto(bytes([addr & 0xFF]), result)
             if self._debug:
                 print("$%02X => %s" % (addr, [hex(i) for i in result]))
             return result[0]

@@ -36,6 +36,7 @@ else:
 
 print("Press Joystick button to exit program.")
 
+# joystick.button goes to 0 when pressed
 while joystick.button == 1:
     print("X = " + str(joystick.horizontal) + " Y = " + str(joystick.vertical))
     sleep(0.200)  # sleep a bit to slow down messages

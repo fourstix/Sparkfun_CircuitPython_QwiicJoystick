@@ -94,13 +94,13 @@ To install for current user:
 
 .. code-block:: shell
 
-    pip3 install Sparkfun-circuitpython-qwiicjoystick
+    pip3 install sparkfun-circuitpython-qwiicjoystick
 
 To install system-wide (this may be required in some cases):
 
 .. code-block:: shell
 
-    sudo pip3 install Sparkfun-circuitpython-qwiicjoystick
+    sudo pip3 install sparkfun-circuitpython-qwiicjoystick
 
 To install in a virtual environment in your current project:
 
@@ -109,7 +109,7 @@ To install in a virtual environment in your current project:
     mkdir project-name && cd project-name
     python3 -m venv .env
     source .env/bin/activate
-    pip3 install Sparkfun-circuitpython-qwiicjoystick
+    pip3 install sparkfun-circuitpython-qwiicjoystick
 
 
 
@@ -144,19 +144,18 @@ Usage Example
 
 * Code Example:
 
- .. code-block:: shell
+.. code-block:: shell
 
-     # import the CircuitPython board and busio libraries
-     import board
-     import busio
+    # import the CircuitPython board and busio libraries
+    import board
 
-     # Create bus object using the board's I2C port
-     i2c = busio.I2C(board.SCL, board.SDA)
+    # Create bus object using the board's I2C port
+    i2c = board.I2C()
 
-     joystick = QwiicJoystick(i2c)  # default address is 0x20
+    joystick = QwiicJoystick(i2c)  # default address is 0x20
 
-     # use QwiicJoystick(i2c, address) for a different address
-     # joystick = QwiicJoystick(i2c, 0x21)"""
+    # use QwiicJoystick(i2c, address) for a different address
+    # joystick = QwiicJoystick(i2c, 0x21)"""
 
 Contributing
 ============

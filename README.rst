@@ -159,8 +159,7 @@ Usage Example
 
 Upgrading
 =========
-On supported GNU/Linux systems like the Raspberry Pi, you can upgrade the driver locally `from
-PyPI <https://pypi.org/project/Sparkfun-circuitpython-qwiicjoystick/>`_.
+On supported GNU/Linux systems like the Raspberry Pi, you can upgrade the driver to the latest published version.
 
 To upgrade for current user:
 
